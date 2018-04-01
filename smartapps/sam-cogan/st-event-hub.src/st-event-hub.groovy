@@ -22,7 +22,7 @@ definition(
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
     iconX3Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png") {
-    appSetting "EventhubSecret"
+    appSetting "EventHubSecret"
     appSetting "EventHubURL"
 }
 
@@ -75,7 +75,8 @@ def sendEvent(sensorId, sensorName, sensorType, value) {
         httpPost(params) { resp -> 
             log.debug "response message ${resp}"
         }
-    } catch (e) { 
+    } catch (e) {
+        // For some reason SmartThings treats 200 as an error response, so we need to comment this out to avoid errors. Uncomment the line below to debug errors 
         //log.error "something went wrong: $e"
     }
 }
