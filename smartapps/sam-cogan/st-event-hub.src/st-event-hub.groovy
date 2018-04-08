@@ -112,9 +112,9 @@ def contactHandler(evt) {
 
 def switchHandler(evt) {
     if (evt.value == "on") {
-        sendEvent(evt.displayName + 'switch', evt.displayName, 'switchOn', 'on')
+        sendEvent(evt.displayName + 'switch', evt.displayName, 'switch', 'on')
     } else if (evt.value == "off") {
-        sendEvent(evt.displayName + 'switch', evt.displayName, 'switchOff', 'off')
+        sendEvent(evt.displayName + 'switch', evt.displayName, 'switch', 'off')
     }
 }
 
