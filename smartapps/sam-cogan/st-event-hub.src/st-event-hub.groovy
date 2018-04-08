@@ -58,6 +58,7 @@ def initialize() {
     subscribe(temperatures, "temperature", temperatureHandler)
     subscribe(motions, "motion", motionHandler)
     subscribe(contacts, "contact", contactHandler)
+    subscribe(theSwitch, "switch", switchHandler)
 }
 
 def sendEvent(sensorId, sensorName, sensorType, value) {
@@ -103,7 +104,15 @@ def contactHandler(evt) {
         sendEvent(evt.displayName + 'contact', evt.displayName, 'doorOpen', 'open')
     }
     if (evt.value == 'closed') {
-        sendEvent(evt.displayName + 'contact', evt.displayName, 'doorOpen', 'open')
+        sendEvent(evt.displayName + 'contact', evt.displayName, 'doorOpen', 'closed')
+    }
+}
+
+def switchHandler(evt) {
+    if (evt.value == "on") {
+        sendEvent(evt.displayName + 'switch', evt.displayName, 'switchOn', 'on')
+    } else if (evt.value == "off") {
+        sendEvent(evt.displayName + 'switch', evt.displayName, 'switchOff', 'off')
     }
 }
 
