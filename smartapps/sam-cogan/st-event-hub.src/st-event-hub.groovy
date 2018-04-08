@@ -37,7 +37,9 @@ preferences {
     section("Security Sensors") {
         input "motions", "capability.motionSensor", title: "Motion Sensors", multiple: true
         }
-    
+    section("Switches") {
+        input "switches", "capability.switch", title: "Switches", multiple: true
+    }
 }
 
 def installed() {
