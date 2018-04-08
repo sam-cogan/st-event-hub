@@ -60,7 +60,7 @@ def initialize() {
     subscribe(temperatures, "temperature", temperatureHandler)
     subscribe(motions, "motion", motionHandler)
     subscribe(contacts, "contact", contactHandler)
-    subscribe(theSwitch, "switch", switchHandler)
+    subscribe(switches, "switch", switchHandler)
 }
 
 def sendEvent(sensorId, sensorName, sensorType, value) {
