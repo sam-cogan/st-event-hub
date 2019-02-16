@@ -40,6 +40,15 @@ preferences {
     section("Switches") {
         input "switches", "capability.switch", title: "Switches", multiple: true, required: false
     }
+     section("Acceleration Sensors") {
+        input "acceleration sensors", "capability.accelerationSensor", title: "Acceleration Sensors", multiple: true, required: false
+    }
+    section("Contact Sensors") {
+        input "contact sensors", "capability.contactSensor", title: "Contact Sensors", multiple: true, required: false
+    }
+    section("Buttons") {
+        input "buttons", "capability.button", title: "Buttons", multiple: true, required: false
+    }
 }
 
 def installed() {
