@@ -29,16 +29,16 @@ definition(
 
 preferences {
     section("Power Meter") {
-        input "powers", "capability.powerMeter", title: "Power Sensor", multiple: true
+        input "powers", "capability.powerMeter", title: "Power Sensor", multiple: true, required: false
     }
     section("Environment") {
-        input "temperatures", "capability.temperatureMeasurement", title: "Temperature Sensors", multiple: true
+        input "temperatures", "capability.temperatureMeasurement", title: "Temperature Sensors", multiple: true, required: false
     }
     section("Security Sensors") {
-        input "motions", "capability.motionSensor", title: "Motion Sensors", multiple: true
+        input "motions", "capability.motionSensor", title: "Motion Sensors", multiple: true, required: false
         }
     section("Switches") {
-        input "switches", "capability.switch", title: "Switches", multiple: true
+        input "switches", "capability.switch", title: "Switches", multiple: true, required: false
     }
 }
 
